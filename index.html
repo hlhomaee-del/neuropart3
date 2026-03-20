@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nervous System NCLEX Mastery Lab — Part 2B</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+:root{
+  --bg:#060810;--surf:#0c1020;--surf2:#121830;--surf3:#1a2240;
+  --bdr:#1e2d54;--text:#e8eeff;--muted:#6a7fa8;
+  --red:#ff3d3d;--red-d:#2a0505;
+  --orange:#ff8c42;--orange-d:#2a1200;
+  --yellow:#f5d020;--yellow-d:#231e00;
+  --green:#2ecc71;--green-d:#052014;
+  --teal:#1dd2b8;--teal-d:#041c18;
+  --blue:#3d8eff;--blue-d:#041230;
+  --violet:#8b5cf6;--violet-d:#12072a;
+  --pink:#e879f9;--pink-d:#200a2a;
+  --cyan:#22d3ee;--cyan-d:#031820;
+  --lime:#84cc16;--lime-d:#101e02;
+  --indigo:#6366f1;--indigo-d:#0a0c2a;
+  --amber:#fbbf24;--amber-d:#1f1500;
+  --r:8px;--r2:14px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;overflow-x:hidden;background-image:radial-gradient(ellipse at 20% 20%,rgba(61,142,255,.04) 0%,transparent 60%),radial-gradient(ellipse at 80% 80%,rgba(139,92,246,.04) 0%,transparent 60%)}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--surf)}::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:3px}
+.hdr{background:linear-gradient(135deg,#060810,#0c1020,#0a0e1e);border-bottom:1px solid var(--bdr);padding:14px 18px 0;position:sticky;top:0;z-index:200;box-shadow:0 4px 30px rgba(61,142,255,.2)}
+.hdr-top{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.logo{width:46px;height:46px;background:linear-gradient(135deg,var(--cyan),var(--violet));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;box-shadow:0 0 24px rgba(34,211,238,.5);animation:npulse 3s ease-in-out infinite}
+@keyframes npulse{0%,100%{box-shadow:0 0 24px rgba(34,211,238,.5)}50%{box-shadow:0 0 44px rgba(139,92,246,.7)}}
+.hdr-info h1{font-family:'Rajdhani',sans-serif;font-size:clamp(14px,2.5vw,21px);font-weight:700;background:linear-gradient(90deg,#22d3ee,#8b5cf6,#e879f9,#f5d020);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:.5px}
+.hdr-info p{font-size:11px;color:var(--muted)}
+.part-badge{margin-left:auto;padding:5px 14px;background:linear-gradient(135deg,var(--cyan),var(--violet));border-radius:20px;font-size:11px;font-weight:700;color:#fff;white-space:nowrap;font-family:'Rajdhani',sans-serif;letter-spacing:.5px}
+.tab-nav{display:flex;gap:1px;overflow-x:auto;scrollbar-width:none}
+.tab-nav::-webkit-scrollbar{display:none}
+.tb{padding:9px 18px;border:none;background:transparent;color:var(--muted);font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s;letter-spacing:.5px;border-radius:var(--r) var(--r) 0 0;text-transform:uppercase}
+.tb:hover{color:var(--text);background:rgba(34,211,238,.06)}
+.tb.active{color:var(--cyan);border-bottom-color:var(--teal);background:rgba(34,211,238,.1)}
+.main{max-width:1140px;margin:0 auto;padding:22px 14px 80px}
+.sec{display:none;animation:fd .3s ease}.sec.active{display:block}
+@keyframes fd{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.sh{margin-bottom:22px}
+.sh h2{font-family:'Rajdhani',sans-serif;font-size:clamp(18px,4vw,28px);font-weight:700;margin-bottom:4px;letter-spacing:.5px}
+.sh p{font-size:13px;color:var(--muted)}
+.card{background:var(--surf);border:1px solid var(--bdr);border-radius:var(--r2);padding:16px;transition:border-color .2s}
+.card:hover{border-color:rgba(34,211,238,.3)}
+.ct{font-size:13.5px;font-weight:600;margin-bottom:9px;display:flex;align-items:center;gap:7px;font-family:'Rajdhani',sans-serif;letter-spacing:.3px}
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:700px){.g2{grid-template-columns:1fr}}
+@media(max-width:520px){.cg{grid-template-columns:1fr}}
+.hl{background:var(--surf2);border-radius:var(--r);padding:10px 13px;margin:7px 0;font-size:12.5px}
+.hl-r{background:var(--red-d);border:1px solid rgba(255,61,61,.2)}
+.hl-g{background:var(--green-d);border:1px solid rgba(46,204,113,.2)}
+.hl-b{background:var(--blue-d);border:1px solid rgba(61,142,255,.2)}
+.hl-o{background:var(--orange-d);border:1px solid rgba(255,140,66,.2)}
+.hl-v{background:var(--violet-d);border:1px solid rgba(139,92,246,.2)}
+.hl-y{background:var(--yellow-d);border:1px solid rgba(245,208,32,.2)}
+.hl-t{background:var(--teal-d);border:1px solid rgba(29,210,184,.2)}
+.hl-a{background:var(--amber-d);border:1px solid rgba(251,191,36,.2)}
+.hl-c{background:var(--cyan-d);border:1px solid rgba(34,211,238,.2)}
+.hl-p{background:var(--pink-d);border:1px solid rgba(232,121,249,.2)}
+.al{padding:11px 14px;border-radius:var(--r);margin-bottom:12px;font-size:12.5px;border-left:3px solid;display:flex;gap:9px;align-items:flex-start;line-height:1.6}
+.al-em{background:var(--red-d);border-color:var(--red);color:#ffacac}
+.al-warn{background:var(--orange-d);border-color:var(--orange);color:#ffd09a}
+.al-info{background:var(--blue-d);border-color:var(--blue);color:#9dcfff}
+.al-ok{background:var(--green-d);border-color:var(--green);color:#9affb8}
+.al-cyan{background:var(--cyan-d);border-color:var(--cyan);color:#9ff3ff}
+.bl{list-style:none}
+.bl li{padding:4px 0;border-bottom:1px solid rgba(30,45,84,.4);font-size:12.5px;display:flex;gap:7px;align-items:flex-start}
+.bl li::before{content:'▸';color:var(--cyan);font-size:10px;margin-top:4px;flex-shrink:0}
+.btn{display:inline-flex;align-items:center;gap:5px;padding:8px 16px;border-radius:var(--r);border:none;font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:700;cursor:pointer;transition:all .18s;text-transform:uppercase;letter-spacing:.5px}
+.btn-c{background:linear-gradient(135deg,var(--cyan),var(--indigo));color:#060810}
+.btn-c:hover{transform:translateY(-1px);box-shadow:0 5px 20px rgba(34,211,238,.4)}
+.btn-s{background:var(--surf2);color:var(--text);border:1px solid var(--bdr)}
+.btn-s:hover{background:var(--bdr)}
+/* QUIZ */
+.qo{display:block;width:100%;text-align:left;padding:10px 13px;background:var(--surf2);border:1px solid var(--bdr);border-radius:var(--r);color:var(--text);font-size:12.5px;cursor:pointer;margin-bottom:6px;transition:all .18s;line-height:1.5}
+.qo:hover:not(:disabled){background:rgba(34,211,238,.07);border-color:rgba(34,211,238,.4)}
+.qo.cor{background:var(--green-d);border-color:var(--green);color:#9affb8}
+.qo.wrg{background:var(--red-d);border-color:var(--red);color:#ffacac}
+.qo:disabled{cursor:not-allowed;opacity:.85}
+.fb{display:none;padding:11px 13px;border-radius:var(--r);margin-top:8px;font-size:12.5px;line-height:1.6}
+.fb-c{display:block;background:var(--green-d);border:1px solid var(--green);color:#9affb8}
+.fb-w{display:block;background:var(--red-d);border:1px solid var(--red);color:#ffacac}
+.pw{background:var(--surf2);border-radius:20px;height:8px;overflow:hidden;margin:7px 0}
+.pb{height:100%;background:linear-gradient(90deg,var(--teal),var(--violet));border-radius:20px;transition:width .5s ease}
+.sb{background:var(--surf);border:1px solid var(--bdr);border-radius:var(--r2);padding:18px;text-align:center;margin-bottom:20px}
+.sb-big{font-size:56px;font-weight:900;background:linear-gradient(135deg,var(--cyan),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-family:'Rajdhani',sans-serif;line-height:1}
+.q-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:linear-gradient(135deg,var(--teal),var(--indigo));border-radius:50%;font-size:11px;font-weight:700;color:#060810;flex-shrink:0;font-family:'Rajdhani',sans-serif;margin-right:6px}
+/* MEMORY */
+.mn{border-radius:var(--r2);padding:20px;margin-bottom:16px;position:relative;overflow:hidden}
+.mn::before{content:'';position:absolute;top:-30px;right:-30px;width:100px;height:100px;border-radius:50%;opacity:.06;background:currentColor}
+.mn-r{background:linear-gradient(135deg,var(--red-d),rgba(42,5,5,.8));border:1px solid rgba(255,61,61,.3)}
+.mn-b{background:linear-gradient(135deg,var(--blue-d),rgba(4,18,48,.8));border:1px solid rgba(61,142,255,.3)}
+.mn-v{background:linear-gradient(135deg,var(--violet-d),rgba(18,7,42,.8));border:1px solid rgba(139,92,246,.3)}
+.mn-g{background:linear-gradient(135deg,var(--green-d),rgba(5,32,20,.8));border:1px solid rgba(46,204,113,.3)}
+.mn-o{background:linear-gradient(135deg,var(--orange-d),rgba(42,18,0,.8));border:1px solid rgba(255,140,66,.3)}
+.mn-t{background:linear-gradient(135deg,var(--teal-d),rgba(4,28,24,.8));border:1px solid rgba(29,210,184,.3)}
+.mn-y{background:linear-gradient(135deg,var(--yellow-d),rgba(35,30,0,.8));border:1px solid rgba(245,208,32,.3)}
+.mn-p{background:linear-gradient(135deg,var(--pink-d),rgba(32,10,42,.8));border:1px solid rgba(232,121,249,.3)}
+.mn-a{background:linear-gradient(135deg,var(--amber-d),rgba(31,21,0,.8));border:1px solid rgba(251,191,36,.3)}
+.mn-c{background:linear-gradient(135deg,var(--cyan-d),rgba(3,24,32,.8));border:1px solid rgba(34,211,238,.3)}
+.mn h3{font-family:'Rajdhani',sans-serif;font-size:17px;font-weight:700;letter-spacing:.5px;margin-bottom:10px}
+.letter-row{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.letter-box{padding:6px 10px;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;min-width:36px;text-align:center}
+.mnemgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.divider{border:none;border-top:1px solid var(--bdr);margin:20px 0}
+.badge{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap;font-family:'Rajdhani',sans-serif}
+.b-em{background:var(--red-d);color:var(--red);border:1px solid rgba(255,61,61,.35)}
+.b-warn{background:var(--orange-d);color:var(--orange);border:1px solid rgba(255,140,66,.35)}
+.b-ok{background:var(--green-d);color:var(--green);border:1px solid rgba(46,204,113,.35)}
+.b-med{background:var(--violet-d);color:var(--violet);border:1px solid rgba(139,92,246,.35)}
+.b-hy{background:var(--yellow-d);color:var(--yellow);border:1px solid rgba(245,208,32,.35)}
+@media(max-width:480px){.tb{padding:7px 10px;font-size:10px}.main{padding:12px 9px 60px}}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-top">
+    <div class="logo">🧠</div>
+    <div class="hdr-info">
+      <h1>Nervous System NCLEX Interactive Mastery Lab</h1>
+      <p>Part 2B · Section 11: Memory Tricks · Section 12: 35-Question Quiz</p>
+    </div>
+    <div class="part-badge">⚡ PART 2B of 3</div>
+  </div>
+  <nav class="tab-nav">
+    <button class="tb active" data-tab="mem">11 Memory Tricks</button>
+    <button class="tb" data-tab="qz">12 Quick Check Quiz (35 Q)</button>
+  </nav>
+</header>
+
+<main class="main">
+
+<!-- ============================================================ SECTION 11: MEMORY -->
+<section id="mem" class="sec active">
+  <div class="sh"><h2 style="color:var(--cyan)">🧠 Memory Tricks & Mnemonics</h2><p>High-yield neuro patterns that stick — built for NCLEX exam-day recall</p></div>
+  <div class="al al-cyan">💡 <span>These mnemonics cover the highest-yield neuro NCLEX content. Master these patterns and you can recognize scenarios in case studies at a glance.</span></div>
+  <div id="mem-content"></div>
+</section>
+
+<!-- ============================================================ SECTION 12: QUIZ -->
+<section id="qz" class="sec">
+  <div class="sh"><h2 style="color:var(--yellow)">⚡ Quick Check Quiz — 35 NCLEX Questions</h2><p>Neurological nursing — immediate feedback, rationales, and running score</p></div>
+  <div class="sb">
+    <div class="sb-big" id="qz-score">0/35</div>
+    <div style="color:var(--muted);font-size:13px;margin-top:5px" id="qz-lbl">Answer all 35 questions — score updates instantly</div>
+    <div class="pw" style="margin-top:10px"><div class="pb" id="qz-prog" style="width:0%"></div></div>
+  </div>
+  <div id="qz-content"></div>
+  <div style="text-align:center;margin-top:24px">
+    <button class="btn btn-c" onclick="resetQuiz()">🔄 Restart Quiz</button>
+  </div>
+</section>
+
+</main>
+
+<script>
+// NAV
+document.querySelectorAll('.tb').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.tb').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.sec').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById(b.dataset.tab).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+
+// ─────────────────────────────────────────────
+// MEMORY TRICKS
+// ─────────────────────────────────────────────
+const memories=[
+  {cls:'mn-r',icon:'🩸',title:'FAST — Stroke Recognition',
+   body:`<p style="font-size:13px;margin-bottom:10px">The universal stroke screening tool. Every nursing student must know this cold.</p>
+   <div class="letter-row">
+     <div class="letter-box" style="background:rgba(255,61,61,.2);color:var(--red)">F</div>
+     <div class="letter-box" style="background:rgba(255,61,61,.2);color:var(--red)">A</div>
+     <div class="letter-box" style="background:rgba(255,61,61,.2);color:var(--red)">S</div>
+     <div class="letter-box" style="background:rgba(255,61,61,.2);color:var(--red)">T</div>
+   </div>
+   <div class="hl hl-r" style="font-size:12.5px;line-height:2">
+     <strong>F</strong>ace — Ask to smile. Is one side drooping?<br>
+     <strong>A</strong>rms — Raise both arms. Does one drift down? (pronator drift)<br>
+     <strong>S</strong>peech — Repeat a sentence. Is it slurred or strange?<br>
+     <strong>T</strong>ime — Time to call 911! Note exact time of last known well.<br><br>
+     <em>Extra: BE-FAST adds Balance loss and Eyes (vision changes) for posterior circulation strokes</em>
+   </div>
+   <div class="hl hl-y" style="font-size:12px;margin-top:8px">⭐ NCLEX: "Last known well" starts the tPA clock — NOT when symptoms were discovered. Window = 3–4.5 hours. CT FIRST to exclude hemorrhage before tPA.</div>`},
+
+  {cls:'mn-v',icon:'⚡',title:'TRAP — Parkinson\'s Cardinal Signs',
+   body:`<p style="font-size:13px;margin-bottom:10px">The four hallmark features of Parkinson's disease — all related to dopamine deficiency in the basal ganglia.</p>
+   <div class="letter-row">
+     <div class="letter-box" style="background:rgba(139,92,246,.2);color:var(--violet)">T</div>
+     <div class="letter-box" style="background:rgba(139,92,246,.2);color:var(--violet)">R</div>
+     <div class="letter-box" style="background:rgba(139,92,246,.2);color:var(--violet)">A</div>
+     <div class="letter-box" style="background:rgba(139,92,246,.2);color:var(--violet)">P</div>
+   </div>
+   <div class="hl hl-v" style="font-size:12.5px;line-height:2">
+     <strong>T</strong>remor — RESTING tremor ("pill-rolling" of thumb and forefinger). Decreases with purposeful movement.<br>
+     <strong>R</strong>igidity — Cogwheel rigidity (ratchet-like resistance through range of motion)<br>
+     <strong>A</strong>kinesia/Bradykinesia — Slowness, difficulty initiating movement, freezing episodes<br>
+     <strong>P</strong>ostural instability — Stooped posture, shuffling gait (festination), propulsion falls
+   </div>
+   <div class="hl hl-y" style="font-size:12px;margin-top:8px">⭐ Also: Mask-like face (hypomimia), micrographia (tiny writing), dysphagia, sialorrhea (drooling). NEVER give haloperidol or metoclopramide — both block dopamine receptors → catastrophic worsening.</div>`},
+
+  {cls:'mn-o',title:'Cushing\'s Triad — Herniation Warning',icon:'🧠',
+   body:`<p style="font-size:13px;margin-bottom:10px">Late, life-threatening sign of transtentorial herniation from elevated ICP. Memorize all three components.</p>
+   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0">
+     <div style="text-align:center;padding:14px;background:rgba(255,61,61,.12);border-radius:var(--r);border:1px solid rgba(255,61,61,.3)">
+       <div style="font-size:28px">📈</div>
+       <div style="font-weight:700;color:var(--red);font-family:'Rajdhani',sans-serif;font-size:14px">↑ BLOOD PRESSURE</div>
+       <div style="font-size:11px;color:var(--muted);margin-top:4px">Widening pulse pressure<br>(↑SBP, ↓DBP)</div>
+     </div>
+     <div style="text-align:center;padding:14px;background:rgba(255,61,61,.12);border-radius:var(--r);border:1px solid rgba(255,61,61,.3)">
+       <div style="font-size:28px">📉</div>
+       <div style="font-weight:700;color:var(--red);font-family:'Rajdhani',sans-serif;font-size:14px">↓ HEART RATE</div>
+       <div style="font-size:11px;color:var(--muted);margin-top:4px">Bradycardia<br>(reflex parasympathetic)</div>
+     </div>
+     <div style="text-align:center;padding:14px;background:rgba(255,61,61,.12);border-radius:var(--r);border:1px solid rgba(255,61,61,.3)">
+       <div style="font-size:28px">😮‍💨</div>
+       <div style="font-weight:700;color:var(--red);font-family:'Rajdhani',sans-serif;font-size:14px">IRREGULAR RR</div>
+       <div style="font-size:11px;color:var(--muted);margin-top:4px">Cheyne-Stokes<br>respirations</div>
+     </div>
+   </div>
+   <div class="hl hl-r" style="font-size:12px;margin-top:8px">🚨 This is a LATE sign — herniation is already happening. Do NOT wait for all 3. Act on any one. Call rapid response, prepare mannitol, HOB 30°, emergency neurosurgery consult. Also look for: blown pupil (CN III compression), posturing.</div>`},
+
+  {cls:'mn-t',title:'SLUDGE — Cholinergic Crisis (Pyridostigmine Overdose)',icon:'💧',
+   body:`<p style="font-size:13px;margin-bottom:10px">Occurs when too much pyridostigmine (Mestinon) is given in Myasthenia Gravis — excess acetylcholine at all cholinergic synapses.</p>
+   <div class="letter-row">
+     <div class="letter-box" style="background:rgba(29,210,184,.15);color:var(--teal)">S</div>
+     <div class="letter-box" style="background:rgba(29,210,184,.15);color:var(--teal)">L</div>
+     <div class="letter-box" style="background:rgba(29,210,184,.15);color:var(--teal)">U</div>
+     <div class="letter-box" style="background:rgba(29,210,184,.15);color:var(--teal)">D</div>
+     <div class="letter-box" style="background:rgba(29,210,184,.15);color:var(--teal)">G</div>
+     <div class="letter-box" style="background:rgba(29,210,184,.15);color:var(--teal)">E</div>
+   </div>
+   <div class="hl hl-t" style="font-size:12.5px;line-height:2">
+     <strong>S</strong>alivation (excessive drooling)<br>
+     <strong>L</strong>acrimation (excessive tearing)<br>
+     <strong>U</strong>rination (urinary incontinence/urgency)<br>
+     <strong>D</strong>efecation / Diarrhea<br>
+     <strong>G</strong>I cramping<br>
+     <strong>E</strong>mesis (vomiting)
+   </div>
+   <div class="g2" style="margin-top:10px;gap:8px">
+     <div class="hl hl-r" style="font-size:12px">🚨 PLUS: bradycardia, bronchospasm, miosis (pinpoint pupils), muscle weakness → respiratory failure</div>
+     <div class="hl hl-g" style="font-size:12px">✅ Antidote: Atropine (blocks muscarinic receptors). Treat cholinergic crisis by withholding pyridostigmine + giving atropine + supporting airway.</div>
+   </div>
+   <div class="hl hl-y" style="font-size:12px;margin-top:8px">⭐ NCLEX: Cholinergic crisis = SLUDGE + weakness. Myasthenic crisis = weakness WITHOUT SLUDGE. Both cause respiratory failure — airway is priority in BOTH. Distinguish by the secretions.</div>`},
+
+  {cls:'mn-g',title:'GBS vs MG — Ascending vs Fatigable',icon:'🔌',
+   body:`<div class="g2">
+     <div>
+       <div style="font-weight:700;color:var(--teal);font-size:14px;font-family:'Rajdhani',sans-serif;margin-bottom:8px">🔵 Guillain-Barré Syndrome</div>
+       <ul class="bl">
+         <li>Ascending symmetric weakness (starts in feet → goes up)</li>
+         <li>Post-infectious (1–3 weeks after: Campylobacter, CMV, Zika, COVID)</li>
+         <li>ABSENT deep tendon reflexes (LMN — peripheral demyelination)</li>
+         <li>Progression over days–weeks, then recovery over months</li>
+         <li>Respiratory failure in 25–30% (PRIORITY: monitor breathing)</li>
+         <li>Treatment: IVIG or Plasmapheresis (NOT steroids)</li>
+         <li>CSF: elevated protein, normal WBC ("albumino-cytologic dissociation")</li>
+       </ul>
+     </div>
+     <div>
+       <div style="font-weight:700;color:var(--yellow);font-size:14px;font-family:'Rajdhani',sans-serif;margin-bottom:8px">🟡 Myasthenia Gravis</div>
+       <ul class="bl">
+         <li>Fatigable weakness — WORSE with activity/repetition, BETTER with rest</li>
+         <li>Ptosis worsening through the day (classic presentation)</li>
+         <li>Normal or mildly decreased DTRs</li>
+         <li>Autoimmune: antibodies against AChR at neuromuscular junction</li>
+         <li>Respiratory failure = myasthenic crisis (PRIORITY: monitor breathing)</li>
+         <li>Treatment: Pyridostigmine (Mestinon) + steroids + IVIG/Plasmapheresis for crisis</li>
+         <li>Thymus involvement (thymectomy may induce remission)</li>
+       </ul>
+     </div>
+   </div>
+   <div class="hl hl-y" style="margin-top:10px;font-size:12px">⭐ Key differentiator: GBS = ASCENDING from feet, ABSENT reflexes, post-infection. MG = FATIGABLE (worsens with use), normal-ish reflexes, ptosis worsens through day.</div>`},
+
+  {cls:'mn-p',title:'MS Patterns — Scattered in Space & Time',icon:'⚡',
+   body:`<p style="font-size:13px;margin-bottom:10px">Multiple Sclerosis diagnosis requires symptoms that occur in DIFFERENT PARTS of the CNS at DIFFERENT TIMES — "disseminated in space and time."</p>
+   <div class="g2">
+     <div class="hl hl-p" style="font-size:12.5px;line-height:1.9">
+       <strong>Classic Clue Symptoms:</strong><br>
+       👁️ Optic neuritis — painful eye movement, temporary vision loss (often first symptom)<br>
+       ⚡ Lhermitte's sign — electric shock down spine with neck flexion<br>
+       🌡️ Uhthoff's phenomenon — symptoms worsen with heat (NOT a relapse)<br>
+       🦵 Spasticity and weakness (UMN signs)<br>
+       😴 Fatigue — MOST DISABLING symptom<br>
+       🚽 Bladder urgency/retention<br>
+       🧠 Cognitive "MS fog"
+     </div>
+     <div class="hl hl-p" style="font-size:12.5px;line-height:1.9">
+       <strong>NCLEX Must-Knows:</strong><br>
+       🔥 Uhthoff's = heat worsening — NOT a relapse. Teach: cool showers, cooling vest<br>
+       💊 Acute relapse: IV methylprednisolone (shortens relapse — does NOT change long-term course)<br>
+       🧬 MRI: periventricular white matter plaques on T2/FLAIR<br>
+       🛡️ DMTs: reduce relapse rate (natalizumab, interferon-beta, glatiramer)<br>
+       ⚠️ Natalizumab: PML risk (JC virus) — check JC antibody before use<br>
+       ❄️ Corticosteroids NOT used in GBS (unlike MS — critical distinction)
+     </div>
+   </div>`},
+
+  {cls:'mn-b',title:'Decorticate vs Decerebrate Posturing',icon:'🦾',
+   body:`<p style="font-size:13px;margin-bottom:10px">Both indicate severe brain injury. Both require immediate MD notification. Decerebrate = worse prognosis.</p>
+   <div class="g2">
+     <div style="padding:16px;background:rgba(255,140,66,.1);border:1px solid rgba(255,140,66,.35);border-radius:var(--r)">
+       <div style="font-weight:700;color:var(--orange);font-size:15px;font-family:'Rajdhani',sans-serif;margin-bottom:8px">🦾 Decorticate (Core)</div>
+       <div style="text-align:center;font-size:32px;padding:10px;background:rgba(255,140,66,.08);border-radius:var(--r);margin-bottom:10px">🙆 Arms FLEX to CORE</div>
+       <ul class="bl">
+         <li>Arms FLEXED and adducted toward chest (core)</li>
+         <li>Wrists and fingers flexed</li>
+         <li>Legs extended and internally rotated</li>
+         <li>Lesion: cortical or subcortical (above brainstem)</li>
+         <li>Memory: DE<strong>CORE</strong>ticate = arms go to the CORE</li>
+       </ul>
+     </div>
+     <div style="padding:16px;background:rgba(255,61,61,.1);border:1px solid rgba(255,61,61,.4);border-radius:var(--r)">
+       <div style="font-weight:700;color:var(--red);font-size:15px;font-family:'Rajdhani',sans-serif;margin-bottom:8px">💀 Decerebrate (Extend — WORSE)</div>
+       <div style="text-align:center;font-size:32px;padding:10px;background:rgba(255,61,61,.08);border-radius:var(--r);margin-bottom:10px">🙅 Arms EXTEND like a Board</div>
+       <ul class="bl">
+         <li>Arms EXTENDED, adducted, pronated (palms facing down)</li>
+         <li>Legs extended, plantar flexion</li>
+         <li>Lesion: BRAINSTEM (midbrain or upper pons)</li>
+         <li>GCS Motor = 2 (very low)</li>
+         <li>Memory: deCEREBRATE = CEREBRUM disconnected from brainstem → arms extend OUT</li>
+       </ul>
+     </div>
+   </div>
+   <div class="hl hl-y" style="margin-top:10px;font-size:12px">⭐ Memory hack: Decorticate → arms FLEX to core (like hugging yourself). Decerebrate → arms EXTEND (like a stiff board — stiff = brainstem level = worse).</div>`},
+
+  {cls:'mn-o',title:'Autonomic Dysreflexia — SIT-UP FIRST',icon:'🚨',
+   body:`<p style="font-size:13px;margin-bottom:10px">Life-threatening hypertensive emergency in SCI above T6. Triggered by noxious stimulus below injury level.</p>
+   <div class="hl hl-r" style="font-size:13px;line-height:2;margin-bottom:10px">
+     <strong>🚨 Signs:</strong> Sudden severe pounding headache + BP >150 (often >200) + Bradycardia + Diaphoresis/flushing ABOVE injury level + Pallor BELOW injury level + Goosebumps
+   </div>
+   <div style="font-weight:700;color:var(--orange);font-family:'Rajdhani',sans-serif;font-size:14px;margin-bottom:8px">Emergency Action Order (in this sequence):</div>
+   <div class="hl hl-o" style="font-size:12.5px;line-height:2">
+     <strong>1️⃣ SIT PATIENT UPRIGHT immediately</strong> — gravity ↓ BP (orthostatic effect)<br>
+     <strong>2️⃣ CHECK BLADDER FIRST</strong> — most common trigger (kinked catheter, full bladder, UTI)<br>
+     <strong>3️⃣ CHECK RECTUM</strong> — fecal impaction (use anesthetic lubricant — plain lubrication worsens stimulus)<br>
+     <strong>4️⃣ Check skin</strong> — tight clothing, pressure, ingrown toenail, pressure ulcer<br>
+     <strong>5️⃣ Monitor BP</strong> every 2–5 minutes until resolved<br>
+     <strong>6️⃣ Notify MD</strong> if BP doesn't resolve — nifedipine or nitroglycerin if critically elevated
+   </div>
+   <div class="hl hl-y" style="font-size:12px;margin-top:8px">⭐ NCLEX #1 SCI emergency. FIRST action = SIT UPRIGHT (not medicate). Most common trigger = BLADDER distension (check catheter for kinks first). Laying flat WORSENS hypertension. Most tested SCI scenario on NCLEX.</div>`},
+
+  {cls:'mn-g',title:'Meningitis Clue Cluster',icon:'🦠',
+   body:`<p style="font-size:13px;margin-bottom:10px">Three classic signs + two positive clinical tests = meningitis until proven otherwise.</p>
+   <div class="g2">
+     <div>
+       <div style="font-weight:700;color:var(--green);font-family:'Rajdhani',sans-serif;font-size:14px;margin-bottom:8px">Classic Triad</div>
+       <div style="padding:12px;background:rgba(46,204,113,.08);border:1px solid rgba(46,204,113,.25);border-radius:var(--r);font-size:13px;line-height:2">
+         🌡️ <strong>Fever</strong><br>
+         🤕 <strong>Nuchal rigidity</strong> (stiff neck — cannot flex chin to chest)<br>
+         💡 <strong>Photophobia</strong> (light sensitivity) + <strong>Phonophobia</strong> (sound sensitivity)
+       </div>
+       <div style="font-weight:700;color:var(--green);font-family:'Rajdhani',sans-serif;font-size:14px;margin-top:12px;margin-bottom:8px">Meningeal Signs</div>
+       <div class="hl hl-g" style="font-size:12.5px;line-height:1.9">
+         <strong>Kernig's:</strong> Flex hip 90° → resist knee extension → pain = positive<br>
+         <strong>Brudzinski's:</strong> Flex neck → involuntary hip/knee flexion = positive<br>
+         <strong>Non-blanching petechial rash</strong> = meningococcemia = EMERGENCY
+       </div>
+     </div>
+     <div>
+       <div style="font-weight:700;color:var(--orange);font-family:'Rajdhani',sans-serif;font-size:14px;margin-bottom:8px">NCLEX Action Points</div>
+       <ul class="bl">
+         <li><span class="badge b-em">🚨 EMERGENCY</span> Antibiotics within 1 HOUR of presentation — do NOT wait for LP if it will delay treatment</li>
+         <li>DROPLET precautions for N. meningitidis (bacterial) — NOT standard precautions</li>
+         <li>CT FIRST if ↑ICP suspected before LP (herniation risk)</li>
+         <li>Dim lights, quiet room (photophobia/phonophobia)</li>
+         <li>HOB 30°, head midline</li>
+         <li>Dexamethasone WITH first antibiotic dose</li>
+         <li>Seizure precautions in place</li>
+         <li>Report to public health — reportable disease</li>
+       </ul>
+     </div>
+   </div>`},
+
+  {cls:'mn-c',title:'Neuro Assessment Priorities — The ABCs of Neuro',icon:'🔍',
+   body:`<p style="font-size:13px;margin-bottom:10px">Rapid neuro check framework — what to assess first, and what changes require immediate action.</p>
+   <div class="mnemgrid">
+     <div class="hl hl-c" style="font-size:12.5px;line-height:1.9">
+       <strong style="color:var(--cyan)">👁️ LOC First</strong><br>
+       Alert → Lethargic → Obtunded → Stuporous → Coma<br>
+       Any DOWNWARD shift = call MD. LOC is most sensitive early indicator.
+     </div>
+     <div class="hl hl-c" style="font-size:12.5px;line-height:1.9">
+       <strong style="color:var(--cyan)">🔦 Pupils PERRL</strong><br>
+       Pupils Equal, Round, Reactive to Light<br>
+       New unequal pupils → blown pupil (dilated, fixed) = CN III compression = HERNIATION
+     </div>
+     <div class="hl hl-c" style="font-size:12.5px;line-height:1.9">
+       <strong style="color:var(--cyan)">💪 Motor Strength</strong><br>
+       0–5 scale, compare bilateral, proximal vs distal<br>
+       Any new asymmetry or decline = notify MD
+     </div>
+     <div class="hl hl-c" style="font-size:12.5px;line-height:1.9">
+       <strong style="color:var(--cyan)">🗣️ Speech</strong><br>
+       Expressive aphasia (can't produce words) = frontal lobe<br>
+       Receptive aphasia (can't understand) = temporal lobe<br>
+       Dysarthria (slurred) = motor problem (not aphasia)
+     </div>
+     <div class="hl hl-r" style="font-size:12.5px;line-height:1.9">
+       <strong style="color:var(--red)">🚨 HOB Positions</strong><br>
+       ↑ICP: HOB 30°, head MIDLINE (promotes venous drainage)<br>
+       Ischemic stroke: HOB FLAT (improves perfusion)<br>
+       Hemorrhagic stroke/SAH: HOB 30° (reduces ICP)<br>
+       Seizure: Lateral (recovery position)
+     </div>
+     <div class="hl hl-y" style="font-size:12.5px;line-height:1.9">
+       <strong style="color:var(--yellow)">⭐ GCS Quick Reference</strong><br>
+       15 = Normal · 13–14 = Mild impairment<br>
+       9–12 = Moderate · ≤8 = Coma (protect airway!)<br>
+       Drop of 2+ points = clinically significant → call MD
+     </div>
+   </div>`},
+
+  {cls:'mn-y',title:'Seizure Safety — The "DO NOTs"',icon:'⚡',
+   body:`<p style="font-size:13px;margin-bottom:10px">During a seizure, knowing what NOT to do is just as important as knowing what to do. NCLEX loves to test the wrong actions.</p>
+   <div class="g2">
+     <div>
+       <div style="font-weight:700;color:var(--red);font-family:'Rajdhani',sans-serif;font-size:14px;margin-bottom:8px">❌ NEVER DO These</div>
+       <ul class="bl">
+         <li>Put ANYTHING in the mouth (not tongue blade, not finger, not anything) — tongue CANNOT be swallowed</li>
+         <li>RESTRAIN limb movements — causes fractures and dislocations</li>
+         <li>Leave the patient alone</li>
+         <li>Put patient in PRONE position (face down)</li>
+         <li>Give oral medications during active seizure (aspiration)</li>
+       </ul>
+     </div>
+     <div>
+       <div style="font-weight:700;color:var(--green);font-family:'Rajdhani',sans-serif;font-size:14px;margin-bottom:8px">✅ ALWAYS DO These</div>
+       <ul class="bl">
+         <li>Lower patient safely to floor, protect head</li>
+         <li>LATERAL position (recovery position) when possible</li>
+         <li>TIME the seizure from start</li>
+         <li>Clear area of hard objects</li>
+         <li>Loosen clothing around neck</li>
+         <li>Provide O₂ after tonic phase</li>
+         <li>Stay and call for help</li>
+         <li>>5 min = STATUS EPILEPTICUS → call rapid response</li>
+       </ul>
+     </div>
+   </div>
+   <div class="hl hl-y" style="margin-top:10px;font-size:12px">⭐ NCLEX #1 seizure trap: "Put a padded tongue blade in the mouth." WRONG — never do this. Tongue CANNOT be swallowed. Objects cause oral trauma and aspiration. This is the most classic wrong answer in neuro nursing NCLEX questions.</div>`},
+
+  {cls:'mn-a',title:'Spinal Shock vs Neurogenic Shock — The Big Difference',icon:'🦴',
+   body:`<div class="g2">
+     <div style="padding:14px;background:rgba(29,210,184,.08);border:1px solid rgba(29,210,184,.3);border-radius:var(--r)">
+       <div style="font-weight:700;color:var(--teal);font-family:'Rajdhani',sans-serif;font-size:14px;margin-bottom:8px">⚡ Spinal Shock</div>
+       <ul class="bl">
+         <li>Temporary COMPLETE loss of all spinal cord functions below injury</li>
+         <li>Flaccid paralysis, absent reflexes, no sensation</li>
+         <li>Lasts hours to weeks (resolves)</li>
+         <li>NOT permanent — it's a physiological stunned state</li>
+         <li>Ends when bulbocavernosus reflex returns</li>
+         <li>THEN true extent of injury can be assessed</li>
+       </ul>
+     </div>
+     <div style="padding:14px;background:rgba(255,140,66,.08);border:1px solid rgba(255,140,66,.3);border-radius:var(--r)">
+       <div style="font-weight:700;color:var(--orange);font-family:'Rajdhani',sans-serif;font-size:14px;margin-bottom:8px">⚠️ Neurogenic Shock</div>
+       <ul class="bl">
+         <li>Distributive shock from loss of sympathetic tone (SCI above T6)</li>
+         <li>↓ BP + BRADYCARDIA + WARM/FLUSHED skin</li>
+         <li>Vs Hypovolemic: ↓BP + TACHYCARDIA + cool/clammy skin</li>
+         <li>Treatment: IV fluids (carefully), vasopressors, atropine (bradycardia)</li>
+         <li>Ongoing — not self-resolving like spinal shock</li>
+       </ul>
+     </div>
+   </div>
+   <div class="hl hl-y" style="margin-top:10px;font-size:12px">⭐ NCLEX KEY: Neurogenic shock has BRADYCARDIA with hypotension (sympathetic loss = no compensatory tachycardia). Hypovolemic shock has TACHYCARDIA with hypotension. Warm skin vs cold/clammy = biggest clinical differentiator.</div>`},
+
+  {cls:'mn-b',title:'Bell\'s Palsy vs Stroke Facial Droop',icon:'😶',
+   body:`<p style="font-size:13px;margin-bottom:10px">Critical differentiator — both cause facial droop but the FOREHEAD tells you where the lesion is.</p>
+   <div class="g2">
+     <div style="padding:14px;background:rgba(61,142,255,.08);border:1px solid rgba(61,142,255,.3);border-radius:var(--r)">
+       <div style="font-weight:700;color:var(--blue);font-family:'Rajdhani',sans-serif;font-size:15px;margin-bottom:8px">🔵 Bell's Palsy</div>
+       <div style="font-size:13px;margin-bottom:8px">CN VII peripheral lesion (outside brainstem)</div>
+       <ul class="bl">
+         <li>Forehead IS affected — cannot raise eyebrow on affected side</li>
+         <li>Cannot close eye completely → CORNEAL INJURY RISK</li>
+         <li>Full unilateral facial weakness (upper + lower)</li>
+         <li>Often post-viral (HSV reactivation)</li>
+         <li>Treat: prednisone within 72hr, eye protection</li>
+       </ul>
+     </div>
+     <div style="padding:14px;background:rgba(255,61,61,.08);border:1px solid rgba(255,61,61,.3);border-radius:var(--r)">
+       <div style="font-weight:700;color:var(--red);font-family:'Rajdhani',sans-serif;font-size:15px;margin-bottom:8px">🔴 Stroke Facial Droop</div>
+       <div style="font-size:13px;margin-bottom:8px">UMN lesion (cortex/internal capsule)</div>
+       <ul class="bl">
+         <li>Forehead is SPARED — CAN still raise eyebrow</li>
+         <li>Only LOWER face droops (bilateral cortical representation of forehead)</li>
+         <li>Associated with arm weakness, aphasia</li>
+         <li>Emergency: CT, tPA if eligible</li>
+       </ul>
+     </div>
+   </div>
+   <div class="hl hl-y" style="margin-top:10px;font-size:12px">⭐ The FOREHEAD is the key: Bell's palsy = forehead INVOLVED (cannot raise brow). Stroke = forehead SPARED (bilateral cortical control protects the forehead). Priority nursing for Bell's = EYE PROTECTION (corneal abrasion risk).</div>`},
+];
+
+document.getElementById('mem-content').innerHTML=memories.map(m=>`
+  <div class="mn ${m.cls}">
+    <h3>${m.icon} ${m.title}</h3>
+    ${m.body}
+  </div>`).join('');
+
+// ─────────────────────────────────────────────
+// QUIZ — 35 QUESTIONS
+// ─────────────────────────────────────────────
+const quizQs=[
+  {q:'During a tonic-clonic seizure, the most important nursing action is:',o:['Insert a padded tongue depressor to prevent tongue injury','Hold the patient\'s arms still to prevent injury from flailing','Position the patient on their side and protect the head from injury','Administer oral diazepam immediately'],c:2,r:'During a seizure: protect from injury, lateral position, protect head. NEVER put anything in the mouth (tongue cannot be swallowed). NEVER restrain (fractures). Time the seizure. Call for help.'},
+  {q:'A patient with ischemic stroke arrives at the ED. The CT is negative for hemorrhage. Which finding is a CONTRAINDICATION to tPA?',o:['Heart rate of 96 bpm','Blood pressure of 192/112 mmHg','Glucose of 142 mg/dL','Mild dysphagia on screening'],c:1,r:'tPA is contraindicated if BP >185/110. BP must be lowered to ≤185/110 before tPA can be administered. Glucose and HR are not contraindications. Dysphagia is a symptom of stroke that will be managed separately.'},
+  {q:'Which patient finding suggests INCREASED intracranial pressure and requires immediate action?',o:['Bilateral pedal edema, HR 72, BP 130/80','GCS dropping from 14 to 11 over 2 hours with new pupil asymmetry','Mild headache rated 2/10, requesting ibuprofen','Alert patient reporting blurred vision while using phone'],c:1,r:'GCS drop of 3 points + new pupil asymmetry = significant neurological deterioration suggesting ↑ICP and possible herniation. Requires immediate MD notification, re-assessment, and potential emergency CT scan.'},
+  {q:'A patient with Parkinson\'s disease is admitted for a UTI. The physician orders haloperidol for agitation. The nurse should:',o:['Administer as ordered — haloperidol is safe and effective for agitation in all patients','Question this order — haloperidol blocks dopamine receptors and dramatically worsens Parkinson\'s symptoms','Give half the prescribed dose to reduce the risk','Substitute lorazepam instead without contacting the physician'],c:1,r:'Haloperidol is absolutely contraindicated in Parkinson\'s disease. It blocks dopamine receptors → dramatically worsens all PD symptoms (rigidity, bradykinesia, tremor) and can trigger NMS-like reaction. The nurse must refuse this order and contact the physician. Quetiapine or clozapine are safer alternatives if antipsychotic is truly needed.'},
+  {q:'Which assessment finding is the PRIORITY concern in a patient with Guillain-Barré syndrome?',o:['Pain and paresthesias in the lower extremities','Declining tidal volume and inability to speak in full sentences without pausing','Absent deep tendon reflexes in the lower extremities','Anxiety about the diagnosis and recovery timeline'],c:1,r:'Respiratory failure occurs in 25–30% of GBS patients as ascending paralysis reaches respiratory muscles. Declining tidal volume and inability to speak full sentences indicate respiratory muscle weakness — the most life-threatening concern. This may necessitate mechanical ventilation. Monitoring respiratory function every 4 hours is critical.'},
+  {q:'A T5 SCI patient develops sudden severe headache, BP 204/116, bradycardia, and is sweating profusely above the umbilicus. The FIRST nursing action is:',o:['Administer the ordered PRN antihypertensive medication immediately','Notify the physician and await orders','Sit the patient upright and assess for triggering stimuli (check catheter for obstruction)','Lay the patient flat to improve cerebral perfusion'],c:2,r:'Autonomic dysreflexia: FIRST = sit upright (orthostatic BP reduction). THEN = find and eliminate trigger. Most common trigger = bladder distension (check catheter for kinks/obstruction). Laying flat INCREASES BP. Antihypertensives are used only if BP doesn\'t resolve after trigger removal.'},
+  {q:'A patient with myasthenia gravis is taking pyridostigmine. Which symptom indicates CHOLINERGIC CRISIS (too much medication)?',o:['Ptosis worsening, diplopia, difficulty swallowing — no change in secretions','Muscle weakness, increased salivation, lacrimation, diarrhea, and bradycardia','Muscle weakness only, with dry mouth and constipation','High fever, muscle rigidity, and altered mental status'],c:1,r:'Cholinergic crisis = SLUDGE + weakness: Salivation (excessive), Lacrimation, Urination/Diarrhea, GI cramping, Emesis + bradycardia, bronchospasm, pinpoint pupils. The KEY differentiator from myasthenic crisis is the SLUDGE symptoms (excessive secretions). Treatment: hold pyridostigmine, give atropine, support airway.'},
+  {q:'Which nursing intervention is CORRECT for a patient with suspected increased ICP?',o:['Position the head of bed flat to maximize cerebral perfusion','Position HOB 30° with head and neck in midline alignment','Encourage coughing to maintain airway clearance','Apply heating pad to reduce muscle tension and improve comfort'],c:1,r:'HOB 30° with head/neck in MIDLINE promotes venous drainage from the brain and reduces ICP. Head rotation or neck flexion compresses jugular veins → impairs drainage → increases ICP. Coughing and Valsalva maneuver increase ICP. Exception: ischemic stroke patients may benefit from HOB flat to improve cerebral perfusion.'},
+  {q:'A patient being treated for bacterial meningitis is placed in which type of isolation precautions?',o:['Airborne precautions (N95 respirator, negative pressure room)','Contact precautions (gloves and gown for all contact)','Droplet precautions (surgical mask, private room)','Standard precautions only (hand hygiene and gloves)'],c:2,r:'Neisseria meningitidis (bacterial meningitis) requires DROPLET precautions — the organisms are transmitted by respiratory droplets (not airborne like TB). Surgical mask when within 3 feet, private room. Droplet precautions until 24 hours after effective antibiotic therapy begins. Viral meningitis = standard precautions only.'},
+  {q:'The nurse is caring for a patient on natalizumab (Tysabri) for multiple sclerosis. The JC antibody index returns at 3.2 (positive and elevated). Priority nursing action:',o:['Document the result and continue scheduled monthly infusion as planned','Withhold the infusion and notify the physician immediately — elevated JC antibody significantly increases risk of PML (Progressive Multifocal Leukoencephalopathy)','Administer the infusion but premedicate with corticosteroids to reduce PML risk','Reassure the patient that a positive JC antibody only means past exposure and poses no current risk'],c:1,r:'Progressive Multifocal Leukoencephalopathy (PML) is a potentially fatal brain infection from JC virus reactivation in natalizumab-treated patients. A high JC antibody index (>0.9, especially >1.5) dramatically increases risk. The physician must reassess the benefit-risk balance before continuing therapy. This is a patient safety issue — withhold and notify.'},
+  {q:'A patient with ALS has a forced vital capacity of 46% of predicted. Which nursing action reflects the highest priority?',o:['Schedule a nutrition consultation for dietary optimization','Encourage active range of motion exercises to maintain muscle strength','Initiate advance directive and goals-of-care discussions while the patient can clearly express preferences','Refer to occupational therapy for assistive device recommendations'],c:2,r:'ALS patients have preserved cognition but declining respiratory function. At FVC 46%, respiratory failure is approaching (BiPAP consideration is typically recommended when FVC <50%). This is an optimal time to ensure advance directives are documented while the patient can clearly communicate. Delaying this conversation until crisis is a missed opportunity and does not honor patient autonomy.'},
+  {q:'Which finding distinguishes Bell\'s palsy from a central (UMN) facial droop from stroke?',o:['Facial droop is more severe in Bell\'s palsy','Bell\'s palsy affects the FOREHEAD (patient cannot raise the eyebrow on the affected side)','Bell\'s palsy affects both sides of the face simultaneously','Stroke causes more severe symptoms than Bell\'s palsy'],c:1,r:'In Bell\'s palsy (peripheral CN VII lesion): forehead is AFFECTED — patient cannot raise eyebrow on the affected side, cannot close eye fully. In stroke (central UMN lesion): forehead is SPARED — the patient can still raise the eyebrow (bilateral cortical representation protects forehead). This is the most reliable clinical differentiator.'},
+  {q:'A patient with MS is admitted with a relapse. Which medication is used for acute MS exacerbation?',o:['Levodopa/carbidopa to restore neurotransmitter balance','IV methylprednisolone (Solu-Medrol) — high-dose corticosteroids to reduce inflammation','IVIG to neutralize autoantibodies against myelin','Pyridostigmine to improve nerve conduction in the CNS'],c:1,r:'Acute MS relapse: IV methylprednisolone (1g/day × 3–5 days) shortens the duration and severity of relapse. It does NOT change long-term disease course. IVIG and plasmapheresis are used for GBS and MG crisis — not acute MS relapse. Levodopa is for Parkinson\'s. Pyridostigmine is for MG.'},
+  {q:'Which action does the nurse perform FIRST when a lumbar puncture is ordered for a patient with suspected increased ICP?',o:['Obtain informed consent and prepare the patient in the fetal position','Administer IV morphine for procedural pain management','Ensure a CT scan is performed first to check for herniation risk before LP','Prepare the sterile LP kit and position the patient in lateral decubitus'],c:2,r:'LP is CONTRAINDICATED if elevated ICP is present (herniation risk — LP relieves pressure at the lumbar level → brain can shift downward through foramen magnum → brainstem compression → death). CT head must be done FIRST to assess for mass effect, midline shift, or obliteration of cisterns before LP is performed.'},
+  {q:'During IV phenytoin infusion, the nurse notes blue-purple skin discoloration and firmness at the IV site extending 4 cm. What is the PRIORITY action?',o:['Slow the infusion rate — the phenytoin is being administered too quickly','Apply warm compresses to improve circulation at the infusion site','Stop the infusion and remove the IV catheter immediately — this is purple glove syndrome (severe extravasation)','Document the finding and continue the infusion through the same IV site'],c:2,r:'Purple glove syndrome is a severe complication of phenytoin extravasation characterized by progressive tissue necrosis, compartment syndrome, and potential limb ischemia — can require fasciotomy or amputation. Stop the infusion IMMEDIATELY and remove the IV catheter. Notify the physician urgently. Switch to fosphenytoin (safer IV form) via a new IV site.'},
+  {q:'A patient with a C3 spinal cord injury would MOST likely require:',o:['A wheelchair but independent breathing and arm function','Assistance with ambulation but independent self-care','Mechanical ventilator support due to loss of diaphragmatic innervation (phrenic nerve at C3–C5)','Urinary catheterization only — respiratory and motor function are spared'],c:2,r:'The phrenic nerve (C3–C5) innervates the diaphragm. A complete C3 injury disrupts phrenic nerve function → no diaphragmatic movement → NO independent breathing → mechanical ventilation required. "C3, 4, 5 keeps the diaphragm alive" — lesion above C4 typically requires permanent ventilatory support.'},
+  {q:'The nurse is caring for a patient who experienced a tonic-clonic seizure 20 minutes ago. The patient is now confused, reports severe fatigue, and cannot remember the seizure. Which is the correct nursing interpretation?',o:['This suggests the patient is having a new, different type of seizure — call rapid response','The patient is experiencing a postictal state — a normal period of confusion and fatigue after seizure activity','These symptoms indicate serious neurological deterioration — obtain STAT head CT','The patient is having an absence seizure — notify the physician immediately'],c:1,r:'The postictal period is a normal recovery phase after seizure activity that can last minutes to hours. It is characterized by confusion, disorientation, severe fatigue, headache, and amnesia for the seizure event. Todd\'s paralysis (temporary focal weakness) can also occur. Orient the patient gently, maintain a safe environment, allow rest. Document duration of postictal state.'},
+  {q:'Which statement about the therapeutic phenytoin (Dilantin) level is correct?',o:['Therapeutic range is 20–30 mcg/mL for optimal seizure control','Therapeutic range is 10–20 mcg/mL — levels >20 indicate toxicity (nystagmus → ataxia → mental status changes)','Therapeutic range is 1–5 mcg/mL — higher levels cause immediate cardiac toxicity','Phenytoin levels do not correlate with clinical effectiveness — only pill counts matter'],c:1,r:'Phenytoin therapeutic range is 10–20 mcg/mL. Levels above 20 produce toxicity signs: nystagmus (first sign), then ataxia, diplopia, confusion, and paradoxical seizures at very high levels. IV phenytoin must be given in normal saline (not D5W) at max 50 mg/min. Gingival hyperplasia is a chronic side effect requiring dental hygiene teaching.'},
+  {q:'A patient with Parkinson\'s disease is due for carbidopa/levodopa in 15 minutes. The pharmacy calls to say it will be 2 hours late. The nurse\'s BEST response is:',o:['Tell the patient the medication will be delayed and to rest until it arrives','Document the delay and administer when pharmacy delivers it — 2 hours is not clinically significant for a chronic medication','Escalate immediately: contact pharmacy supervisor, charge nurse, and physician — PD medications must be given ON TIME to prevent "off" states and falls risk','Ask the family to bring the patient\'s home supply of medication to use in the interim without physician order'],c:2,r:'Carbidopa/levodopa must be given on schedule. Even 30-minute delays cause "off" states in Parkinson\'s patients → severe rigidity and immobility → high falls risk, inability to communicate, respiratory compromise from aspiration. Hospital pharmacies must prioritize PD medications. This is a patient safety escalation issue.'},
+  {q:'A patient has bacterial meningitis. Antibiotics have been ordered. Which action should the nurse take FIRST?',o:['Dim the lights and ensure a quiet environment for the patient\'s comfort','Administer the prescribed antibiotics immediately — do not delay for any reason','Perform a complete neurological assessment and document baseline findings','Place the patient in a private room and apply droplet precautions'],c:3,r:'The priority nursing action after bacterial meningitis antibiotics are ordered is to establish DROPLET precautions and place the patient in a private room to prevent transmission of N. meningitidis, THEN administer antibiotics as quickly as possible. Infection control must be established before close patient contact. Both isolation AND rapid antibiotic administration are critical, but isolation should be established as the FIRST step before placing the nurse at risk.'},
+  {q:'Which diagnostic finding is MOST specific for Guillain-Barré syndrome on lumbar puncture?',o:['Decreased CSF glucose with elevated WBC count (pleocytosis)','Normal to low CSF protein with elevated lymphocytes','Elevated CSF protein with normal WBC count (albuminocytologic dissociation)','Xanthochromia (yellow CSF) indicating old blood in subarachnoid space'],c:2,r:'GBS classic CSF finding = "albuminocytologic dissociation" — elevated protein (from demyelination and nerve damage leaking protein into CSF) with NORMAL or near-normal WBC count. This combination is highly characteristic of GBS. Decreased glucose + high WBC = meningitis. Xanthochromia = SAH.'},
+  {q:'A patient with Huntington\'s disease has increasing involuntary choreiform movements at mealtimes. Priority nursing intervention:',o:['Encourage the patient to eat independently without assistance — promotes autonomy','Provide a full liquid diet via straw — easier to manage with choreiform movements','Conduct a dysphagia assessment and provide modified texture foods — aspiration pneumonia is the most common cause of death in HD','Restrict all oral intake and insert NG tube prophylactically'],c:2,r:'Aspiration pneumonia is the most common cause of death in Huntington\'s disease. Choreiform movements + dysphagia = HIGH aspiration risk. Dysphagia assessment and appropriately modified diet (soft, thickened liquids, supervised meals, upright positioning) are essential. A straw can increase aspiration risk in dysphagic patients.'},
+  {q:'Which statement about levetiracetam (Keppra) is CORRECT?',o:['Levetiracetam requires regular serum drug level monitoring to detect toxicity','The most notable adverse effect is behavioral changes including irritability and aggression ("Keppra rage")','Levetiracetam is primarily metabolized by the liver — dose reduce in hepatic failure','Levetiracetam is a narrow-spectrum AED effective only for absence seizures'],c:1,r:'"Keppra rage" — behavioral irritability, aggression, hostility, and mood disturbances — is the most notable and clinically significant adverse effect of levetiracetam. Family members often notice before patients. The drug is renally excreted (dose reduce in CKD, not liver failure). It is broad-spectrum (effective for multiple seizure types). Drug level monitoring is not routinely required.'},
+  {q:'Which patient is at GREATEST risk for aspiration pneumonia?',o:['24-year-old with new diagnosis of MS, ambulatory, mild fatigue','68-year-old with late-stage ALS who has dysarthria and relies on a PEG tube for nutrition','45-year-old with Bell\'s palsy on oral prednisone, independent with swallowing','32-year-old with GBS in the lower extremities only, upper extremities and swallowing intact'],c:1,r:'Late-stage ALS with dysarthria and PEG tube: the patient has severe bulbar weakness affecting speech and swallowing. While the PEG tube reduces aspiration risk from oral intake, aspiration of oral secretions (saliva) is still a major risk. Additionally, ALS often means respiratory compromise at this stage. This patient has the most factors converging for aspiration risk.'},
+  {q:'A patient is started on mannitol for elevated ICP. Which laboratory value requires the nurse to HOLD the next dose and notify the physician?',o:['Serum sodium of 138 mEq/L','Serum osmolality of 328 mOsm/kg','Urine output of 400 mL/hr','Serum potassium of 3.8 mEq/L'],c:1,r:'Serum osmolality >320 mOsm/kg indicates risk of acute kidney injury from mannitol accumulation. The goal osmolality is 300–320 mOsm/kg. At 328, the next dose should be held and the physician notified. Mannitol can cause osmotic nephropathy at high osmolal loads. Also monitor urine output (should be high — diuresis is expected).'},
+  {q:'Status epilepticus is defined as:',o:['Any seizure requiring emergency department evaluation','A seizure lasting >5 minutes OR 2+ seizures without consciousness recovery between them','A seizure with loss of bladder or bowel control','Three or more seizures in a 24-hour period'],c:1,r:'Status epilepticus = seizure lasting >5 minutes (older definition was 30 minutes, but 5 minutes is now the operational threshold for intervention) OR two or more seizures without return of consciousness between episodes. This is a medical emergency — first-line treatment is IV benzodiazepines (lorazepam or diazepam). IM midazolam if no IV access.'},
+  {q:'A patient with Parkinson\'s disease states: "My handwriting has gotten so small I can barely read it myself." The nurse recognizes this as:',o:['Dysarthria — impaired motor speech production','Micrographia — characteristic small, cramped handwriting caused by basal ganglia dysfunction in PD','Dysgraphia from a recent stroke','Normal age-related changes that do not require assessment'],c:1,r:'Micrographia (abnormally small, cramped handwriting) is a classic manifestation of Parkinson\'s disease caused by basal ganglia dysfunction affecting fine motor control. It is one of the characteristic features alongside TRAP (Tremor, Rigidity, Akinesia, Postural instability). Dysarthria affects speech, not writing. This is a Parkinson\'s-specific finding, not normal aging.'},
+  {q:'Which intervention is MOST important for preventing corneal injury in a patient with Bell\'s palsy?',o:['Administering prescribed antiviral medication on schedule','Applying lubricating eye drops during the day and ointment at night with eye protection (patch or tape) when sleeping','Encouraging the patient to avoid air-conditioning since dry air worsens symptoms','Applying warm compresses to the affected eye to improve circulation'],c:1,r:'The patient cannot close the affected eye due to facial nerve weakness → corneal exposure → dryness → abrasion → ulceration → permanent vision loss. Priority nursing: artificial tears during day, lubricating ointment at night, eye patch or taped eyelid at night, sunglasses outdoors. Teach patient to manually close the eyelid periodically. This is the highest priority nursing diagnosis in Bell\'s palsy.'},
+  {q:'Which CSF finding distinguishes bacterial from viral meningitis?',o:['Clear CSF with elevated lymphocytes and normal glucose — bacterial meningitis','Cloudy CSF with elevated neutrophils, elevated protein, and DECREASED glucose — bacterial meningitis','Xanthochromic CSF with elevated RBCs — bacterial meningitis','Normal CSF findings — bacterial meningitis requires only clinical diagnosis'],c:1,r:'Bacterial meningitis CSF: CLOUDY (pus — high WBC/neutrophils), ↑protein (damaged blood-brain barrier), ↓glucose (bacteria consume glucose), + bacteria on gram stain/culture. Viral meningitis CSF: clear or slightly cloudy, lymphocytes (not neutrophils), slightly ↑protein, NORMAL glucose. Xanthochromia = SAH (yellow pigment from RBC breakdown).'},
+  {q:'A patient recovering from ischemic stroke has left-sided weakness and unilateral neglect. Which nursing intervention addresses unilateral neglect?',o:['Place all needed items (call light, water, phone) on the RIGHT side only — the stronger, unaffected side','Place items on the LEFT side and approach the patient from the LEFT to encourage awareness of the neglected side','Instruct the patient not to look to the left — this increases falls risk','Maintain bed rails up on both sides and leave the environment unchanged'],c:1,r:'Unilateral neglect (inattention) occurs with right parietal lobe strokes causing neglect of the LEFT visual field and left side of the body. Nursing interventions: approach from the left side, place meaningful items on the left to encourage attention to that side, teach patient to scan to the left. Initially, ensure safety by placing essential items on the non-neglected side while working toward rehabilitation.'},
+  {q:'Which finding in a patient with Guillain-Barré syndrome requires IMMEDIATE intervention?',o:['Absent deep tendon reflexes in the lower extremities','Ascending weakness now reaching the upper extremities with respiratory rate of 28 and declining SpO₂ to 92%','Pain in the lower back and legs rated 5/10','Anxiety about the unknown duration of illness'],c:1,r:'Respiratory rate of 28 + declining SpO₂ + ascending weakness reaching upper extremities = impending respiratory failure. In GBS, respiratory muscles can fail rapidly. This patient needs immediate respiratory assessment (tidal volume, NIF), positioning, O₂, and preparation for possible intubation. Do NOT wait for SpO₂ to drop further — intubation is safer when planned than in emergency.'},
+  {q:'A patient returns from a lumbar puncture procedure. Which nursing instruction is MOST important?',o:['Ambulate frequently in the first hour to prevent blood clots','Lie flat for 1–4 hours and increase fluid intake to help prevent post-LP headache','Eat a full meal immediately to restore blood sugar after fasting','Sit at 45 degrees with legs dangling to reduce back pain'],c:1,r:'Post-LP headache results from CSF leakage at the puncture site → reduced CSF pressure → traction on pain-sensitive structures. It is positional — worse when upright, relieved when lying flat. Preventive care: lie flat for 1–4 hours post-procedure, increase fluid intake to promote CSF production. If severe persistent headache occurs, blood patch (injecting patient\'s own blood to seal leak) may be needed.'},
+  {q:'Which clinical presentation MOST suggests Huntington\'s disease rather than Parkinson\'s disease?',o:['Resting pill-rolling tremor, cogwheel rigidity, and mask-like face in a 68-year-old male','Involuntary writhing choreiform movements with psychiatric disturbances and cognitive decline in a 42-year-old with an affected parent','Shuffling gait and postural instability with micrographia and sialorrhea in a 72-year-old female','Unilateral tremor worsening at rest and improving with intentional movement in a 60-year-old'],c:1,r:'Huntington\'s: choreiform (involuntary writhing) movements + psychiatric symptoms (depression, irritability, psychosis) + cognitive decline + autosomal dominant heredity (positive family history in a parent) + onset typically 30–50 years. Parkinson\'s: RESTING tremor + rigidity + bradykinesia + postural instability — different movement character, typically older onset, dopamine deficiency mechanism.'},
+  {q:'The nurse administers carbamazepine to a patient of Filipino ancestry without a prior HLA-B*1502 genetic test. Which serious adverse effect has the nurse failed to screen for?',o:['Gingival hyperplasia — most common with all sodium channel blockers','Stevens-Johnson syndrome (SJS) — dramatically increased risk in patients carrying the HLA-B*1502 allele who are of Asian descent','Aplastic anemia — which occurs exclusively in Filipino patients on carbamazepine','Purple glove syndrome — occurs only with IV carbamazepine and is more common in Asian patients'],c:1,r:'The HLA-B*1502 allele, found at much higher frequency in patients of Asian ancestry (Chinese, Thai, Filipino, Vietnamese, Malaysian), dramatically increases the risk of Stevens-Johnson syndrome and Toxic Epidermal Necrolysis with carbamazepine. Genetic testing for this allele should occur BEFORE starting carbamazepine in patients of Asian descent. This is a patient safety standard of care.'},
+  {q:'A patient with a known seizure disorder is found post-ictal. The patient has weakness in the right arm that was not present before the seizure. The nurse should:',o:['Activate a code stroke — this is a new neurological deficit requiring immediate tPA evaluation','Document Todd\'s paralysis — a temporary focal weakness post-seizure that resolves within minutes to 24 hours, and monitor closely','Transfer the patient to the ICU — post-seizure weakness always indicates permanent neurological damage','Administer naloxone — post-seizure weakness is caused by opioid-related respiratory depression'],c:1,r:'Todd\'s paralysis (Todd\'s paresis) is a temporary focal neurological weakness following a focal seizure in the area of the brain that was seizing. It typically resolves within minutes to 24 hours. It is important to document baseline neuro status before the seizure and know about this phenomenon to avoid misinterpreting it as a new stroke. However, if the weakness does NOT resolve, stroke evaluation is needed.'},
+];
+
+let qzScore=0,qzAnswered={};
+function renderQuiz(){
+  document.getElementById('qz-content').innerHTML=quizQs.map((q,qi)=>`
+    <div class="card" style="margin-bottom:16px">
+      <div style="display:flex;align-items:center;margin-bottom:11px">
+        <span class="q-num">${qi+1}</span>
+        <span style="font-weight:600;font-size:13px;line-height:1.5">${q.q}</span>
+      </div>
+      ${q.o.map((o,oi)=>`<button class="qo" id="qq${qi}-${oi}" onclick="ansQ(${qi},${oi})">${String.fromCharCode(65+oi)}. ${o}</button>`).join('')}
+      <div class="fb" id="qfb${qi}"></div>
+    </div>`).join('');
+}
+function ansQ(qi,ch){
+  if(qzAnswered[qi])return;qzAnswered[qi]=true;
+  const q=quizQs[qi];
+  document.querySelectorAll(`[id^="qq${qi}-"]`).forEach(b=>b.disabled=true);
+  const fb=document.getElementById('qfb'+qi);
+  if(ch===q.c){qzScore++;document.getElementById(`qq${qi}-${ch}`).classList.add('cor');fb.className='fb fb-c';fb.innerHTML='✅ <strong>Correct!</strong> '+q.r;}
+  else{document.getElementById(`qq${qi}-${ch}`).classList.add('wrg');document.getElementById(`qq${qi}-${q.c}`).classList.add('cor');fb.className='fb fb-w';fb.innerHTML='❌ <strong>Not quite.</strong> '+q.r;}
+  const ans=Object.keys(qzAnswered).length;
+  document.getElementById('qz-score').textContent=`${qzScore}/35`;
+  document.getElementById('qz-lbl').textContent=`${ans} answered · ${Math.round(qzScore/ans*100)}% correct`;
+  document.getElementById('qz-prog').style.width=(ans/35*100)+'%';
+  if(ans===35){
+    const pct=Math.round(qzScore/35*100);
+    document.getElementById('qz-lbl').textContent=`Final Score: ${qzScore}/35 (${pct}%) — ${pct>=80?'🎉 Excellent!':pct>=70?'👍 Good job!':'📚 Keep studying!'}`;
+  }
+}
+function resetQuiz(){
+  qzScore=0;qzAnswered={};
+  renderQuiz();
+  document.getElementById('qz-score').textContent='0/35';
+  document.getElementById('qz-lbl').textContent='Answer all 35 questions — score updates instantly';
+  document.getElementById('qz-prog').style.width='0%';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+renderQuiz();
+</script>
+</body>
+</html>
